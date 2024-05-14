@@ -51,12 +51,5 @@ def move_files_and_cleanup(folder):
                 # Move the file out of downloads folder into the destination folder
                 shutil.move(file_path, os.path.join(destination_path, filename))
 
-        # Attempt to remove the empty subfolder
-        try:
-            os.rmdir(root)
-        except PermissionError as e:
-            print(f"Permission denied to delete folder: {root}")
-            print(e)
-
 # Move files from subfolders within Downloads and perform cleanup
 move_files_and_cleanup(downloads_folder)
